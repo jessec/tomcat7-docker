@@ -1,9 +1,9 @@
 #!/bin/bash
-echo Starting $1 on port $2
+echo Starting "$1" on port "$2"
 #Copy the war file from mounted directory to tomcat webapps directory
 if [ $1 ]
 then
-rm -r /var/lib/tomcat7/webapps/*.*
+rm -r /var/lib/tomcat7/webapps/*
 cd /var/lib/tomcat7/webapps/  && wget $1
 fi
 #Add the port to the JVM args
