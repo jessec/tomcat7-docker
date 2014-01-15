@@ -1,10 +1,11 @@
+
 #!/bin/bash
 echo Starting "$WAR_URL" on port "$PORT"
 #Copy the war file from mounted directory to tomcat webapps directory
-if [ ! -z $WAR_URL ]
+if [ ! -z "$WAR_URL" ]
 then
 rm -r /var/lib/tomcat7/webapps/*
-cd /var/lib/tomcat7/webapps/  && wget -q $WAR_URL
+cd /var/lib/tomcat7/webapps/  && wget $WAR_URL
 fi
 #Add the port to the JVM args
 if [ $PORT ]
@@ -17,3 +18,4 @@ fi
 
 service tomcat7 start
 tail -F /var/lib/tomcat7/logs/catalina.out
+
