@@ -4,7 +4,7 @@ echo Starting "$WAR_URL" on port "$PORT"
 if [ $WAR_URL ]
 then
 rm -r /var/lib/tomcat7/webapps/*
-cd /var/lib/tomcat7/webapps/  && wget $WAR_URL
+cd /var/lib/tomcat7/webapps/  && wget -q $WAR_URL
 fi
 #Add the port to the JVM args
 if [ $PORT ]
